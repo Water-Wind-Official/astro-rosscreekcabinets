@@ -76,28 +76,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<p>Closet systems, drop zones, and organization that keep everything in its place.</p>
 					</div>
 					<div class="card">
-						<h3>Commercial Casework</h3>
-						<p>Reception desks, break rooms, and storage for offices and small businesses.</p>
+						<h3>Commercial Spaces</h3>
+						<p>Reception desks, break rooms, and storage that work for busy offices.</p>
 					</div>
 					<div class="card">
 						<h3>Finishes &amp; Hardware</h3>
 						<p>Paint-grade or stained hardwoods, soft-close hardware, pull-outs, and organizers.</p>
 					</div>
-				</div>
-			</section>
-
-			<section id="gallery">
-				<div class="section-header">
-					<p class="eyebrow">Work in progress</p>
-					<h2>Project gallery</h2>
-					<p>Photos from recent installs are coming soon. Placeholders below reserve space for 10 featured projects.</p>
-				</div>
-				<div class="gallery-grid">
-					{Array.from({ length: 10 }).map((_, index) => (
-						<div class="placeholder" aria-label={`Project image placeholder ${index + 1}`}>
-							<span>Project {index + 1} — Image coming soon</span>
-						</div>
-					))}
 				</div>
 			</section>
 
@@ -135,6 +120,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							<p>Cabinets are installed, aligned, and tuned. We walk through together and handle any touch-ups.</p>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section id="gallery">
+				<div class="section-header">
+					<p class="eyebrow">Work in progress</p>
+					<h2>Project gallery</h2>
+					<p>Photos from recent installs are coming soon. Placeholders below reserve space for 10 featured projects.</p>
+				</div>
+				<div class="gallery-grid">
+					{Array.from({ length: 10 }).map((_, index) => (
+						<div class="placeholder" aria-label={`Project image placeholder ${index + 1}`}>
+							<span>Project {index + 1} — Image coming soon</span>
+						</div>
+					))}
 				</div>
 			</section>
 
