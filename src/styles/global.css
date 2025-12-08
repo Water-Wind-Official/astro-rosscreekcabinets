@@ -11,9 +11,9 @@
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 36, 45, 60;
-	--surface: #f7f7f9;
-	--surface-strong: #f2f3f7;
-	--gray-gradient: #eceef3, #f6f1e9;
+	--surface: #f5f1ea;
+	--surface-strong: #ece6da;
+	--gray-gradient: #e9e2d7, #f2e7d8;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 20%), 0 8px 20px rgba(var(--gray), 28%),
 		0 16px 30px rgba(var(--gray), 28%);
@@ -37,11 +37,13 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background:
-		radial-gradient(140% 90% at 20% 15%, rgba(255, 255, 255, 0.65), transparent 55%),
-		linear-gradient(180deg, var(--gray-gradient)) fixed;
-	background-color: #f2eee8;
-	background-size: 100% 760px, 100% 760px;
+	background-color: #e4d6c2;
+	background-image:
+		linear-gradient(120deg, rgba(255, 255, 255, 0.14) 0%, rgba(0, 0, 0, 0.05) 35%, rgba(255, 255, 255, 0.08) 70%, rgba(0, 0, 0, 0.04) 100%),
+		repeating-linear-gradient(90deg, rgba(104, 76, 50, 0.06) 0, rgba(104, 76, 50, 0.06) 14px, rgba(255, 255, 255, 0.03) 14px, rgba(255, 255, 255, 0.03) 28px),
+		linear-gradient(180deg, #e7d9c5 0%, #d9c8b2 100%);
+	background-blend-mode: multiply, normal, normal;
+	background-size: 100% 760px, 220px 760px, 100% 760px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
