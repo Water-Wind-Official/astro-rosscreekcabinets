@@ -26,6 +26,7 @@
 	"scripts": {
 		"astro": "astro",
 		"build": "astro build",
+		"predeploy": "npm run build",
 		"cf-typegen": "wrangler types",
 		"check": "astro build && tsc && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
