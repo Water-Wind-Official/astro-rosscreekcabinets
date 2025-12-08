@@ -16,20 +16,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="hero">
 				<div class="hero__content">
 					<p class="eyebrow">Waycross, GA • Family owned</p>
-					<h1>Custom cabinets crafted to fit your home and your life.</h1>
+					<h1>Cabinets built for the way you live.</h1>
 					<p class="lede">
-						Ross Creek Cabinets LLC builds tailored kitchens, vanities, built-ins, and storage solutions for
-						homeowners and builders across South Georgia. Owner Derek Roberson oversees every detail—from
-						design to installation.
+						Ross Creek Cabinets designs and installs kitchens, vanities, built-ins, and storage for South Georgia
+						homes.
+					</p>
+					<p class="lede alt">
+						Owner Derek Roberson measures, builds, and installs so every cabinet fits, functions, and looks right on
+						day one.
 					</p>
 					<div class="hero__actions">
 						<a class="btn primary" href="tel:+19123371152">Call 912-337-1152</a>
-						<a class="btn ghost" href="mailto:rosscreekcabinets@gmail.com">Email Derek</a>
+						<a class="btn ghost" href="mailto:rosscreekcabinets@gmail.com">Email</a>
 					</div>
 					<ul class="hero__highlights">
-						<li>Custom-built for your space</li>
-						<li>Measured, crafted, and installed locally</li>
-						<li>Real wood finishes and durable hardware</li>
+						<li>Made-to-measure layouts</li>
+						<li>Built and installed locally by Derek</li>
+						<li>Durable woods, finishes, and hardware</li>
 					</ul>
 				</div>
 				<div class="hero__card">
@@ -182,11 +185,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		gap: 1.5em;
 		align-items: center;
 	}
+	.hero__content {
+		background: #fff;
+		padding: 1.25em;
+		border-radius: 16px;
+		border: 1px solid rgba(var(--gray), 0.12);
+		box-shadow: 0 10px 24px rgba(var(--gray), 0.08);
+	}
 	.hero__content h1 {
-		margin-bottom: 0.4em;
+		margin-bottom: 0.35em;
+		max-width: 22ch;
+		line-height: 1.15;
 	}
 	.hero__content .lede {
-		max-width: 42ch;
+		max-width: 50ch;
+		margin-bottom: 0.6em;
+	}
+	.hero__content .lede.alt {
+		color: rgb(var(--gray));
+		margin-top: -0.2em;
 	}
 	.hero__actions {
 		display: flex;
@@ -207,6 +224,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		padding: 0.6em 0.8em;
 		border-radius: 10px;
 		border: 1px solid rgba(var(--gray), 0.12);
+		font-weight: 600;
 	}
 	.hero__card {
 		background: #fff;
