@@ -41,28 +41,28 @@ body {
 	padding: 0;
 	text-align: left;
 	/* Pastel oak-inspired background (lighter, friendlier, professional) */
-	background-color: #f6eedf;
+	background-color: #f9f3e7;
 	background-image:
-		radial-gradient(ellipse at 16% 16%, rgba(255, 252, 245, 0.35), transparent 56%),
-		radial-gradient(ellipse at 82% 10%, rgba(247, 234, 214, 0.22), transparent 52%),
+		radial-gradient(ellipse at 16% 16%, rgba(255, 252, 245, 0.32), transparent 58%),
+		radial-gradient(ellipse at 82% 10%, rgba(247, 234, 214, 0.18), transparent 54%),
 		repeating-linear-gradient(
 			94deg,
-			rgba(186, 150, 107, 0.065) 0,
-			rgba(186, 150, 107, 0.065) 18px,
-			rgba(255, 255, 255, 0.05) 18px,
-			rgba(255, 255, 255, 0.05) 40px,
-			rgba(147, 120, 88, 0.045) 40px,
-			rgba(147, 120, 88, 0.045) 62px
+			rgba(188, 156, 118, 0.04) 0,
+			rgba(188, 156, 118, 0.04) 22px,
+			rgba(255, 255, 255, 0.04) 22px,
+			rgba(255, 255, 255, 0.04) 48px,
+			rgba(156, 128, 94, 0.03) 48px,
+			rgba(156, 128, 94, 0.03) 70px
 		),
 		repeating-linear-gradient(
 			7deg,
-			rgba(210, 180, 140, 0.055) 0,
-			rgba(210, 180, 140, 0.055) 30px,
-			rgba(240, 228, 210, 0.06) 30px,
-			rgba(240, 228, 210, 0.06) 66px
+			rgba(215, 188, 150, 0.04) 0,
+			rgba(215, 188, 150, 0.04) 34px,
+			rgba(242, 231, 214, 0.05) 34px,
+			rgba(242, 231, 214, 0.05) 72px
 		),
-		linear-gradient(180deg, #f7eede 0%, #ecddc5 48%, #e5d4bd 100%),
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.48' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23grain)' opacity='0.07'/%3E%3C/svg%3E");
+		linear-gradient(180deg, #f9efe2 0%, #efe1ce 48%, #e8d8c7 100%),
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.42' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23grain)' opacity='0.055'/%3E%3C/svg%3E");
 	background-blend-mode: screen, screen, multiply, multiply, normal, multiply;
 	background-size: 100% 940px, 100% 940px, 340px 940px, 440px 940px, 100% 940px, 260px 260px;
 	word-wrap: break-word;
