@@ -12,39 +12,355 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main id="home">
+			<section class="hero">
+				<div class="hero__content">
+					<p class="eyebrow">Waycross, GA • Family owned</p>
+					<h1>Custom cabinets crafted to fit your home and your life.</h1>
+					<p class="lede">
+						Ross Creek Cabinets LLC builds tailored kitchens, vanities, built-ins, and storage solutions for
+						homeowners and builders across South Georgia. Owner Derek Roberson oversees every detail—from
+						design to installation.
+					</p>
+					<div class="hero__actions">
+						<a class="btn primary" href="tel:+19123371152">Call 912-337-1152</a>
+						<a class="btn ghost" href="mailto:rosscreekcabinets@gmail.com">Email Derek</a>
+					</div>
+					<ul class="hero__highlights">
+						<li>Custom-built for your space</li>
+						<li>Measured, crafted, and installed locally</li>
+						<li>Real wood finishes and durable hardware</li>
+					</ul>
+				</div>
+				<div class="hero__card">
+					<h3>Meet your cabinetmaker</h3>
+					<p>
+						“Every project is personal. I measure, build, and install so you get cabinetry that fits right
+						and looks right.”
+					</p>
+					<div class="hero__contact">
+						<p>Derek Roberson</p>
+						<p>Ross Creek Cabinets LLC</p>
+						<p>Waycross, Georgia</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="services">
+				<div class="section-header">
+					<p class="eyebrow">What we build</p>
+					<h2>Cabinetry tailored to your rooms and routines.</h2>
+					<p>
+						From first sketch to final install, we design around your dimensions, finishes, and storage needs.
+						We can coordinate with your contractor or manage the full cabinetry scope.
+					</p>
+				</div>
+				<div class="card-grid">
+					<div class="card">
+						<h3>Kitchens</h3>
+						<p>Full custom kitchens, islands, pantries, and trim that anchor your home.</p>
+					</div>
+					<div class="card">
+						<h3>Bathrooms &amp; Laundry</h3>
+						<p>Vanities, linen towers, and laundry storage built to handle daily use.</p>
+					</div>
+					<div class="card">
+						<h3>Built-ins &amp; Living Spaces</h3>
+						<p>Fireplace surrounds, media walls, mudrooms, and window seats that look original.</p>
+					</div>
+					<div class="card">
+						<h3>Closets &amp; Storage</h3>
+						<p>Closet systems, drop zones, and organization that keep everything in its place.</p>
+					</div>
+					<div class="card">
+						<h3>Commercial Casework</h3>
+						<p>Reception desks, break rooms, and storage for offices and small businesses.</p>
+					</div>
+					<div class="card">
+						<h3>Finishes &amp; Hardware</h3>
+						<p>Paint-grade or stained hardwoods, soft-close hardware, pull-outs, and organizers.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="gallery">
+				<div class="section-header">
+					<p class="eyebrow">Work in progress</p>
+					<h2>Project gallery</h2>
+					<p>Photos from recent installs are coming soon. Placeholders below reserve space for 10 featured projects.</p>
+				</div>
+				<div class="gallery-grid">
+					{Array.from({ length: 10 }).map((_, index) => (
+						<div class="placeholder" aria-label={`Project image placeholder ${index + 1}`}>
+							<span>Project {index + 1} — Image coming soon</span>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section id="process">
+				<div class="section-header">
+					<p class="eyebrow">How it works</p>
+					<h2>A clear path from first call to final install.</h2>
+				</div>
+				<div class="steps">
+					<div class="step">
+						<div class="step__number">1</div>
+						<div>
+							<h3>Measure &amp; consult</h3>
+							<p>We meet on-site in Waycross, GA, confirm dimensions, talk finishes, and align on budget.</p>
+						</div>
+					</div>
+					<div class="step">
+						<div class="step__number">2</div>
+						<div>
+							<h3>Design &amp; approval</h3>
+							<p>Layouts and door styles are finalized; you review details before we start building.</p>
+						</div>
+					</div>
+					<div class="step">
+						<div class="step__number">3</div>
+						<div>
+							<h3>Build</h3>
+							<p>We source materials, craft in the shop, pre-fit, and finish for a clean install.</p>
+						</div>
+					</div>
+					<div class="step">
+						<div class="step__number">4</div>
+						<div>
+							<h3>Install &amp; walkthrough</h3>
+							<p>Cabinets are installed, aligned, and tuned. We walk through together and handle any touch-ups.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="about" class="panel">
+				<div class="section-header">
+					<p class="eyebrow">Who we are</p>
+					<h2>Owner-led craftsmanship in Waycross, Georgia.</h2>
+					<p>
+						Ross Creek Cabinets LLC is owned and operated by Derek Roberson. Every project is measured,
+						built, and installed with care so your cabinetry fits the room, functions for daily life, and
+						looks good for years.
+					</p>
+				</div>
+				<div class="two-col">
+					<div class="card">
+						<h3>Local and accountable</h3>
+						<p>Located at 2116 Carswell Ave, Waycross, GA. We serve homeowners, remodelers, and builders across South Georgia.</p>
+					</div>
+					<div class="card">
+						<h3>Communication first</h3>
+						<p>One point of contact from estimate to install. You always know what’s next and when to expect it.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="contact">
+				<div class="cta">
+					<div>
+						<p class="eyebrow">Ready to start?</p>
+						<h2>Tell us about your project.</h2>
+						<p>Call or email to schedule a site visit in Waycross or the surrounding South Georgia area.</p>
+					</div>
+					<div class="cta__actions">
+						<a class="btn primary" href="tel:+19123371152">Call 912-337-1152</a>
+						<a class="btn ghost" href="mailto:rosscreekcabinets@gmail.com">rosscreekcabinets@gmail.com</a>
+						<p class="cta__address">2116 Carswell Ave • Waycross, GA</p>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+	.hero {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1.5em;
+		align-items: center;
+	}
+	.hero__content h1 {
+		margin-bottom: 0.4em;
+	}
+	.hero__content .lede {
+		max-width: 42ch;
+	}
+	.hero__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6em;
+		margin: 1em 0;
+	}
+	.hero__highlights {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 0.5em;
+		list-style: none;
+		padding: 0;
+		margin: 1em 0 0 0;
+	}
+	.hero__highlights li {
+		background: rgba(var(--gray-light), 0.5);
+		padding: 0.6em 0.8em;
+		border-radius: 10px;
+		border: 1px solid rgba(var(--gray), 0.12);
+	}
+	.hero__card {
+		background: #fff;
+		padding: 1.5em;
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgba(var(--gray), 0.12);
+	}
+	.hero__card h3 {
+		margin-bottom: 0.4em;
+	}
+	.hero__contact {
+		margin-top: 1em;
+		padding-top: 1em;
+		border-top: 1px solid rgba(var(--gray-light), 0.8);
+		color: rgb(var(--gray));
+	}
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		font-size: 0.85em;
+		color: var(--accent);
+		margin: 0 0 0.25em 0;
+	}
+	.section-header {
+		text-align: left;
+		max-width: 820px;
+		margin-bottom: 1.5em;
+	}
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1em;
+	}
+	.card {
+		background: #fff;
+		padding: 1.3em;
+		border-radius: 14px;
+		border: 1px solid rgba(var(--gray), 0.1);
+		box-shadow: 0 10px 25px rgba(var(--gray), 0.08);
+	}
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 0.8em;
+	}
+	.placeholder {
+		background: repeating-linear-gradient(45deg, #f3f4f7, #f3f4f7 10px, #e7e9ef 10px, #e7e9ef 20px);
+		border: 1px dashed rgba(var(--gray), 0.4);
+		border-radius: 12px;
+		padding: 2em 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: rgb(var(--gray));
+		font-weight: 600;
+		min-height: 160px;
+	}
+	.steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1em;
+	}
+	.step {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.8em;
+		align-items: start;
+		padding: 1em;
+		border-radius: 12px;
+		border: 1px solid rgba(var(--gray), 0.12);
+		background: #fff;
+		box-shadow: 0 6px 16px rgba(var(--gray), 0.08);
+	}
+	.step__number {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: var(--accent);
+		color: #fff;
+		display: grid;
+		place-items: center;
+		font-weight: 700;
+	}
+	.panel {
+		background: #fff9f3;
+		border: 1px solid rgba(var(--accent), 0.15);
+		border-radius: 16px;
+		padding: 2em;
+	}
+	.two-col {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1em;
+	}
+	.cta {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		align-items: center;
+		gap: 1em;
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		color: #fff;
+		border-radius: 16px;
+		padding: 1.5em;
+		box-shadow: var(--box-shadow);
+	}
+	.cta h2 {
+		color: #fff;
+	}
+	.cta__actions {
+		display: grid;
+		gap: 0.6em;
+	}
+	.cta__actions .btn {
+		width: 100%;
+		text-align: center;
+	}
+	.cta__address {
+		margin: 0;
+		color: rgba(255, 255, 255, 0.85);
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.75em 1.1em;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
+		border: 2px solid var(--accent);
+	}
+	.btn.primary {
+		background: var(--accent);
+		color: #fff;
+	}
+	.btn.primary:hover {
+		background: var(--accent-dark);
+		border-color: var(--accent-dark);
+		color: #fff;
+	}
+	.btn.ghost {
+		background: #fff;
+		color: var(--accent);
+	}
+	.btn.ghost:hover {
+		background: #fff5eb;
+	}
+	@media (max-width: 960px) {
+		.hero,
+		.cta {
+			grid-template-columns: 1fr;
+		}
+		.hero__content .lede {
+			max-width: 100%;
+		}
+	}
+</style>

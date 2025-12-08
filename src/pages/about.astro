@@ -1,62 +1,164 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="About Ross Creek Cabinets | Custom Cabinetry in Waycross, GA"
+			description="Learn about Ross Creek Cabinets LLC, owned by Derek Roberson and based at 2116 Carswell Ave, Waycross, GA."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main id="about">
+			<section class="about-hero">
+				<div>
+					<p class="eyebrow">About</p>
+					<h1>Ross Creek Cabinets LLC</h1>
+					<p class="lede">
+						Ross Creek Cabinets is a local cabinetry shop in Waycross, GA. Owner Derek Roberson oversees
+						every measurement, cut, finish, and install so your cabinetry fits the room and lasts.
+					</p>
+				</div>
+				<div class="info">
+					<h3>Details</h3>
+					<ul>
+						<li><strong>Address:</strong> 2116 Carswell Ave, Waycross, GA</li>
+						<li><strong>Phone:</strong> <a href="tel:+19123371152">912-337-1152</a></li>
+						<li><strong>Email:</strong> <a href="mailto:rosscreekcabinets@gmail.com">rosscreekcabinets@gmail.com</a></li>
+						<li><strong>Service area:</strong> Waycross and surrounding South Georgia communities</li>
+					</ul>
+				</div>
+			</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<section class="grid">
+				<div class="card">
+					<h3>Owner-led and accountable</h3>
+					<p>Derek is your point of contact from estimate to install. We communicate timelines clearly and confirm details before building.</p>
+				</div>
+				<div class="card">
+					<h3>Built for daily life</h3>
+					<p>We use durable materials, smart storage options, and careful installation so doors, drawers, and finishes hold up over time.</p>
+				</div>
+				<div class="card">
+					<h3>Collaborative with pros</h3>
+					<p>We work directly with homeowners or alongside contractors, designers, and builders to keep projects moving smoothly.</p>
+				</div>
+				<div class="card">
+					<h3>Local craft, local support</h3>
+					<p>Based in Waycross, we stand behind our work and are nearby if you need follow-up or additional cabinetry.</p>
+				</div>
+			</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<section class="cta">
+				<div>
+					<p class="eyebrow">Let’s talk cabinetry</p>
+					<h2>Tell us about your space.</h2>
+					<p>Share dimensions, inspiration photos, or contractor plans. We’ll meet on-site, finalize a plan, and start building.</p>
+				</div>
+				<div class="cta__actions">
+					<a class="btn primary" href="tel:+19123371152">Call 912-337-1152</a>
+					<a class="btn ghost" href="mailto:rosscreekcabinets@gmail.com">rosscreekcabinets@gmail.com</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+	.about-hero {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1.25em;
+		align-items: start;
+	}
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		font-size: 0.85em;
+		color: var(--accent);
+		margin: 0 0 0.25em 0;
+	}
+	.lede {
+		max-width: 52ch;
+	}
+	.info {
+		background: #fff;
+		border: 1px solid rgba(var(--gray), 0.12);
+		border-radius: 14px;
+		padding: 1.2em;
+		box-shadow: var(--box-shadow);
+	}
+	.info ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.info li + li {
+		margin-top: 0.5em;
+	}
+	.grid {
+		margin: 2em 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1em;
+	}
+	.card {
+		background: #fff;
+		padding: 1.2em;
+		border-radius: 14px;
+		border: 1px solid rgba(var(--gray), 0.12);
+		box-shadow: 0 10px 22px rgba(var(--gray), 0.08);
+	}
+	.cta {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		align-items: center;
+		gap: 1em;
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		color: #fff;
+		border-radius: 16px;
+		padding: 1.5em;
+		box-shadow: var(--box-shadow);
+	}
+	.cta h2 {
+		color: #fff;
+	}
+	.cta__actions {
+		display: grid;
+		gap: 0.6em;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.75em 1.1em;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
+		border: 2px solid var(--accent);
+	}
+	.btn.primary {
+		background: #fff;
+		color: var(--accent);
+	}
+	.btn.ghost {
+		background: transparent;
+		color: #fff;
+		border-color: #fff;
+	}
+	.btn.primary:hover,
+	.btn.ghost:hover {
+		opacity: 0.9;
+	}
+	@media (max-width: 960px) {
+		.about-hero,
+		.cta {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
