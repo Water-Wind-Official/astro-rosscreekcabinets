@@ -130,7 +130,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<p>Photos from recent installs are coming soon. Placeholders below reserve space for 10 featured projects.</p>
 				</div>
 				<div class="gallery-grid">
-					{Array.from({ length: 10 }).map((_, index) => (
+					{Array.from({ length: 12 }).map((_, index) => (
 						<div class="placeholder" aria-label={`Project image placeholder ${index + 1}`}>
 							<span>Project {index + 1} — Image coming soon</span>
 						</div>
@@ -182,12 +182,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.hero {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
-		gap: 1.8em;
+		gap: 2em;
 		align-items: center;
 	}
 	.hero__content {
 		background: #fdfbf7;
-		padding: 1.5em;
+		padding: 1.6em;
 		border-radius: 18px;
 		border: 1px solid rgba(var(--gray), 0.12);
 		box-shadow: 0 14px 32px rgba(var(--gray), 0.1);
@@ -253,12 +253,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.section-header {
 		text-align: left;
 		max-width: 820px;
-		margin-bottom: 1.5em;
+		margin-bottom: 2em;
 	}
 	.card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1.8em;
+		gap: 2em;
 	}
 	.card {
 		background: var(--surface);
@@ -270,7 +270,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.gallery-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 0.8em;
+		gap: 1em;
 	}
 	.placeholder {
 		background: repeating-linear-gradient(135deg, #f1f2f6, #f1f2f6 14px, #e5e7ee 14px, #e5e7ee 28px);
@@ -287,15 +287,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	.steps {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1em;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.2em;
 	}
 	.step {
 		display: grid;
 		grid-template-columns: auto 1fr;
 		gap: 0.9em;
 		align-items: start;
-		padding: 1.1em;
+		padding: 1.2em;
 		border-radius: 12px;
 		border: 1px solid rgba(var(--gray), 0.12);
 		background: var(--surface);
@@ -374,7 +374,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background: #fff5eb;
 	}
 	main section {
-		margin-top: 2.6em;
+		margin-top: 3em;
 	}
 	.section-flair {
 		position: relative;
