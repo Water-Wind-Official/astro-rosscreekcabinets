@@ -13,7 +13,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main id="home">
-			<section class="hero section-flair section-flair--warm section-bg section-bg--amber">
+			<section class="hero section-flair section-flair--warm section-band section-band--amber">
 				<div class="hero__content">
 					<p class="eyebrow">Waycross, GA • Family owned</p>
 					<h1>Cabinets built for the way you live.</h1>
@@ -49,7 +49,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="services" class="section-flair section-flair--grid section-bg section-bg--linen">
+			<section id="services" class="section-flair section-flair--grid section-band section-band--linen">
 				<div class="section-header">
 					<p class="eyebrow">What we build</p>
 					<h2>Cabinetry tailored to your rooms and routines.</h2>
@@ -86,7 +86,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="process" class="section-creek section-bg section-bg--creek">
+			<section id="process" class="section-creek section-band section-band--creek">
 				<div class="section-header">
 					<p class="eyebrow">How it works</p>
 					<h2>A clear path from first call to final install.</h2>
@@ -123,7 +123,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="portfolio" class="section-flair section-flair--quiet showcase section-bg section-bg--slate">
+			<section id="portfolio" class="section-flair section-flair--quiet showcase section-band section-band--slate">
 				<div class="section-header">
 					<p class="eyebrow">Recent work</p>
 					<h2>Cabinetry sized for the room, styled for daily living.</h2>
@@ -148,7 +148,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="about" class="panel section-flair section-flair--warm section-bg section-bg--butter">
+			<section id="about" class="panel section-flair section-flair--warm section-band section-band--butter">
 				<div class="section-header">
 					<p class="eyebrow">Who we are</p>
 					<h2>Owner-led craftsmanship in Waycross, Georgia.</h2>
@@ -170,7 +170,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="contact" class="section-flair section-flair--quiet section-bg section-bg--shell">
+			<section id="contact" class="section-flair section-flair--quiet section-band section-band--shell">
 				<div class="cta">
 					<div>
 						<p class="eyebrow">Ready to start?</p>
@@ -265,30 +265,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		max-width: 820px;
 		margin-bottom: 2em;
 	}
-	.section-bg {
-		border-radius: 18px;
-		padding: 0.35em 0.35em 0.1em 0.35em;
+	.section-band {
+		position: relative;
 	}
-	.section-bg > * {
-		border-radius: 16px;
+	.section-band::before {
+		content: "";
+		position: absolute;
+		inset: -8% -9999px;
+		background: var(--section-band-color, #f9f3e7);
+		z-index: 0;
 	}
-	.section-bg--amber {
-		background: linear-gradient(145deg, rgba(154, 97, 42, 0.11), rgba(255, 255, 255, 0.6));
+	.section-band > * {
+		position: relative;
+		z-index: 2;
 	}
-	.section-bg--linen {
-		background: linear-gradient(130deg, rgba(229, 233, 240, 0.6), rgba(245, 241, 234, 0.8));
+	.section-band--amber {
+		--section-band-color: linear-gradient(145deg, rgba(154, 97, 42, 0.1), rgba(255, 255, 255, 0.75));
 	}
-	.section-bg--creek {
-		background: linear-gradient(160deg, rgba(122, 166, 184, 0.18), rgba(245, 241, 234, 0.75));
+	.section-band--linen {
+		--section-band-color: linear-gradient(130deg, rgba(229, 233, 240, 0.55), rgba(245, 241, 234, 0.9));
 	}
-	.section-bg--slate {
-		background: linear-gradient(150deg, rgba(96, 115, 159, 0.12), rgba(245, 241, 234, 0.82));
+	.section-band--creek {
+		--section-band-color: linear-gradient(160deg, rgba(122, 166, 184, 0.18), rgba(245, 241, 234, 0.82));
 	}
-	.section-bg--butter {
-		background: linear-gradient(140deg, rgba(255, 235, 205, 0.4), rgba(245, 241, 234, 0.9));
+	.section-band--slate {
+		--section-band-color: linear-gradient(150deg, rgba(96, 115, 159, 0.15), rgba(245, 241, 234, 0.85));
 	}
-	.section-bg--shell {
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(122, 166, 184, 0.08));
+	.section-band--butter {
+		--section-band-color: linear-gradient(140deg, rgba(255, 235, 205, 0.45), rgba(245, 241, 234, 0.95));
+	}
+	.section-band--shell {
+		--section-band-color: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(122, 166, 184, 0.1));
 	}
 	.card-grid {
 		display: grid;
@@ -452,11 +459,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-size: 120% 120%;
 		opacity: 0.65;
 		pointer-events: none;
-		z-index: 0;
+		z-index: 1;
 	}
 	.section-flair > * {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 	}
 	.section-flair--warm::before {
 		background-image:

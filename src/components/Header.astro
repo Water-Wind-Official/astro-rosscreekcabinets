@@ -114,8 +114,36 @@ import { SITE_TITLE } from '../consts';
 			.filter(Boolean);
 
 		const setActive = (activeLink) => {
+			if (!activeLink) return;
 			navLinks.forEach((l) => l.classList.remove("active"));
-			if (activeLink) activeLink.classList.add("active");
+			activeLink.classList.add("active");
+		};
+
+		const highlightNearest = () => {
+			const viewportMiddle = window.scrollY + window.innerHeight / 2;
+			let closest;
+			let closestDelta = Number.POSITIVE_INFINITY;
+			linkSections.forEach((item) => {
+				const rect = item.section.getBoundingClientRect();
+				const middle = window.scrollY + rect.top + rect.height / 2;
+				const delta = Math.abs(middle - viewportMiddle);
+				if (delta < closestDelta) {
+					closestDelta = delta;
+					closest = item;
+				}
+			});
+			if (closest) setActive(closest.link);
+		};
+
+		let ticking = false;
+		const onScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					highlightNearest();
+					ticking = false;
+				});
+				ticking = true;
+			}
 		};
 
 		if (linkSections.length) {
@@ -127,16 +155,26 @@ import { SITE_TITLE } from '../consts';
 					if (visible[0]) {
 						const entry = visible[0];
 						const match = linkSections.find((item) => item.section === entry.target);
-						if (match) setActive(match.link);
+						if (match) {
+							setActive(match.link);
+							return;
+						}
 					}
+					// Fallback to nearest if nothing is intersecting
+					highlightNearest();
 				},
-				{ rootMargin: "-35% 0px -45% 0px", threshold: [0.25, 0.5, 0.75, 1] }
+				{ rootMargin: "-30% 0px -50% 0px", threshold: [0.15, 0.35, 0.6, 0.85, 1] }
 			);
 
 			linkSections.forEach(({ section }) => observer.observe(section));
+
 			// Ensure a default highlight on load
-			const defaultSection = linkSections.find(({ section }) => section.id === "home");
+			const defaultSection = linkSections.find(({ section }) => section.id === "home") || linkSections[0];
 			if (defaultSection) setActive(defaultSection.link);
+
+			// Keep a nearest highlight as you scroll/resize
+			window.addEventListener("scroll", onScroll, { passive: true });
+			window.addEventListener("resize", highlightNearest);
 		}
 	}
 </script>
