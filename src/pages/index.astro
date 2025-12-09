@@ -232,7 +232,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	.hero--banner {
 		position: relative;
-		margin-top: var(--hero-lift);
+		transform: translateY(var(--hero-lift));
+		margin-top: 0;
+		margin-bottom: calc(var(--hero-lift) * -1 + 24px);
 		padding: 2.4em 2.2em;
 		overflow: hidden;
 		border-radius: 18px;
@@ -621,7 +623,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			grid-template-columns: 1fr;
 		}
 		:root {
-			--hero-lift: -70px;
+			--hero-lift: -120px;
 		}
 		.hero-strip {
 			margin: 0 calc(50% - 50vw);
@@ -629,7 +631,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			height: 280px;
 		}
 		.hero--banner {
-			margin-top: -48px;
 			padding: 1.6em 1.2em;
 		}
 		.hero__content .lede {
