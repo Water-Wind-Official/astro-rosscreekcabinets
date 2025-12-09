@@ -123,18 +123,28 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section id="gallery" class="section-flair section-flair--quiet">
+			<section id="portfolio" class="section-flair section-flair--quiet showcase">
 				<div class="section-header">
-					<p class="eyebrow">Work in progress</p>
-					<h2>Project gallery</h2>
-					<p>Photos from recent installs are coming soon. Placeholders below reserve space for 10 featured projects.</p>
+					<p class="eyebrow">Recent work</p>
+					<h2>Cabinetry sized for the room, styled for daily living.</h2>
+					<p>
+						A few in-progress shots from the shop and job sites. Each piece is measured, built, and finished by
+						Derek so the fit and finish stay consistent from drawings to install.
+					</p>
 				</div>
-				<div class="gallery-grid">
-					{Array.from({ length: 12 }).map((_, index) => (
-						<div class="placeholder" aria-label={`Project image placeholder ${index + 1}`}>
-							<span>Project {index + 1} — Image coming soon</span>
-						</div>
-					))}
+				<div class="showcase-grid">
+					<figure class="showcase-card showcase-card--wide">
+						<img src="https://i.postimg.cc/59LjDS64/IMG-20251209-141756.jpg" alt="Light, warm kitchen cabinetry with a centered island" loading="lazy" />
+						<figcaption>Kitchen run with a painted island, wide drawers, and balanced uppers.</figcaption>
+					</figure>
+					<figure class="showcase-card showcase-card--vertical">
+						<img src="https://i.postimg.cc/QMXh2TYC/IMG-20251209-141801.jpg" alt="Tall built-in cabinetry with open shelves" loading="lazy" />
+						<figcaption>Built-in shelving and base storage sized to the wall for a clean fit.</figcaption>
+					</figure>
+					<figure class="showcase-card showcase-card--vertical">
+						<img src="https://i.postimg.cc/YjKwbGm0/IMG-20251209-141751.jpg" alt="Detailed cabinet doors staged for finishing" loading="lazy" />
+						<figcaption>Door sets prefinished and staged before hardware and installation.</figcaption>
+					</figure>
 				</div>
 			</section>
 
@@ -267,23 +277,51 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border: 2px solid rgba(var(--gray), 0.1);
 		box-shadow: 0 12px 26px rgba(var(--gray), 0.08);
 	}
-	.gallery-grid {
+	.showcase-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		grid-template-columns: 1.6fr 1fr;
 		gap: 1em;
 	}
-	.placeholder {
-		background: repeating-linear-gradient(135deg, #f1f2f6, #f1f2f6 14px, #e5e7ee 14px, #e5e7ee 28px);
-		border: 1px dashed rgba(var(--gray), 0.35);
-		border-radius: 12px;
-		padding: 2.2em 1.2em;
+	.showcase-card {
+		background: var(--surface);
+		border-radius: 16px;
+		border: 1px solid rgba(var(--gray), 0.12);
+		box-shadow: 0 16px 28px rgba(var(--gray), 0.12);
+		overflow: hidden;
+		display: grid;
+		grid-template-rows: auto 1fr;
+		min-height: 100%;
+	}
+	.showcase-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.showcase-card figcaption {
+		margin: 0;
+		padding: 0.9em 1em;
+		font-weight: 650;
+		color: rgb(var(--gray-dark));
+		background: linear-gradient(180deg, rgba(154, 97, 42, 0.06), rgba(154, 97, 42, 0));
+	}
+	.showcase-card--wide {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+	}
+	.showcase-card--wide img {
+		aspect-ratio: 16 / 9;
+		min-height: 100%;
+	}
+	.showcase-card--wide figcaption {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		text-align: center;
-		color: rgb(var(--gray));
-		font-weight: 600;
-		min-height: 170px;
+		font-size: 1.05em;
+		padding: 1.2em;
+	}
+	.showcase-card--vertical img {
+		aspect-ratio: 3 / 4;
 	}
 	.steps {
 		display: grid;
@@ -419,6 +457,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 		.hero__content .lede {
 			max-width: 100%;
+		}
+		.showcase-grid {
+			grid-template-columns: 1fr;
+		}
+		.showcase-card--wide {
+			grid-template-columns: 1fr;
+		}
+		.showcase-card--wide figcaption {
+			padding: 1em;
 		}
 	}
 </style>

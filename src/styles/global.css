@@ -177,6 +177,9 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
+	width: 120%;
+	max-width: none;
+	margin: 1.4em 0 1.2em -10%;
 }
 @media (max-width: 720px) {
 	body {
@@ -184,6 +187,10 @@ hr {
 	}
 	main {
 		padding: 1em;
+	}
+	hr {
+		width: 100%;
+		margin-left: 0;
 	}
 }
 
