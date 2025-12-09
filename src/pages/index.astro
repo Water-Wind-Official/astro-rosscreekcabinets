@@ -13,6 +13,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main id="home">
+			<section class="hero-strip" aria-hidden="true"></section>
 			<section class="hero hero--banner section-flair section-flair--warm section-band section-band--amber">
 				<div class="hero__content">
 					<p class="eyebrow">Waycross, GA • Family owned</p>
@@ -199,36 +200,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		gap: 2em;
 		align-items: center;
 	}
-	.hero--banner {
+	.hero-strip {
 		position: relative;
-		padding: 2.8em 2.2em;
-		overflow: hidden;
-		border-radius: 0;
-		box-shadow: none;
-	}
-	.hero--banner::before {
-		content: "";
-		position: absolute;
-		inset: 0 calc(50% - 50vw);
+		height: 320px;
+		margin: 0 calc(50% - 50vw) 1.8em calc(50% - 50vw);
 		background-image:
-			linear-gradient(135deg, rgba(24, 32, 44, 0.62), rgba(24, 32, 44, 0.1)),
+			linear-gradient(135deg, rgba(24, 32, 44, 0.65), rgba(24, 32, 44, 0.15)),
 			url("https://i.postimg.cc/CLLdWd5W/Gemini-Generated-Image-s6035cs6035cs603.png");
 		background-size: cover;
 		background-position: center;
-		z-index: 0;
+		box-shadow: inset 0 -60px 90px rgba(24, 32, 44, 0.35);
 	}
-	.hero--banner::after {
-		content: "";
-		position: absolute;
-		inset: 0 calc(50% - 50vw);
-		border-radius: 0;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-		pointer-events: none;
-		z-index: 1;
-	}
-	.hero--banner > * {
+	.hero--banner {
 		position: relative;
-		z-index: 2;
+		padding: 2.4em 2.2em;
+		overflow: hidden;
+		border-radius: 18px;
+		box-shadow: 0 18px 34px rgba(var(--black), 0.18);
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(247, 243, 236, 0.96));
 	}
 	.hero__content {
 		background: #fdfbf7;
@@ -609,6 +598,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.hero,
 		.cta {
 			grid-template-columns: 1fr;
+		}
+		.hero-strip {
+			height: 220px;
+			margin: 0 calc(50% - 50vw) 1.2em calc(50% - 50vw);
 		}
 		.hero--banner {
 			padding: 1.6em 1.2em;
