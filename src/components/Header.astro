@@ -17,7 +17,7 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/#about">About</HeaderLink>
 			<HeaderLink href="/#contact">Contact</HeaderLink>
 		</div>
-		<a class="cta" href="tel:+19123371152">Call 912-337-1152</a>
+		<a class="cta" href="/#contact">Get a Quote</a>
 	</nav>
 </header>
 <style>
@@ -107,7 +107,7 @@ import { SITE_TITLE } from '../consts';
 			.map((link) => {
 				const href = link.getAttribute("href") || "";
 				const hash = href.startsWith("#") ? href.substring(1) : href.includes("#") ? href.split("#")[1] : href === "/" ? "home" : "";
-				if (!hash) return null;
+				if (!hash || hash === "home") return null;
 				const section = document.getElementById(hash);
 				return section ? { link, section } : null;
 			})
@@ -169,8 +169,7 @@ import { SITE_TITLE } from '../consts';
 			linkSections.forEach(({ section }) => observer.observe(section));
 
 			// Ensure a default highlight on load
-			const defaultSection = linkSections.find(({ section }) => section.id === "home") || linkSections[0];
-			if (defaultSection) setActive(defaultSection.link);
+			if (linkSections[0]) setActive(linkSections[0].link);
 
 			// Keep a nearest highlight as you scroll/resize
 			window.addEventListener("scroll", onScroll, { passive: true });
