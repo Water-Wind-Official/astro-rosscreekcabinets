@@ -13,7 +13,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main id="home">
-			<section class="hero-strip" aria-hidden="true"></section>
+			<section class="hero-strip" aria-hidden="true">
+				<img src="https://i.postimg.cc/CLLdWd5W/Gemini-Generated-Image-s6035cs6035cs603.png" alt="" loading="lazy" decoding="async" />
+			</section>
 			<section class="hero hero--banner section-flair section-flair--warm section-band section-band--amber">
 				<div class="hero__content">
 					<p class="eyebrow">Waycross, GA • Family owned</p>
@@ -215,6 +217,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		inset: 0;
 		background: linear-gradient(180deg, rgba(24, 32, 44, 0.08), rgba(24, 32, 44, 0.45));
 		pointer-events: none;
+	}
+	main > section:first-of-type {
+		margin-top: 0;
 	}
 	.hero--banner {
 		position: relative;
