@@ -234,7 +234,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		position: relative;
 		transform: translateY(var(--hero-lift));
 		margin-top: 0;
-		margin-bottom: calc(var(--hero-lift) * -1 + 24px);
+		margin-bottom: 0;
 		padding: 2.4em 2.2em;
 		overflow: hidden;
 		border-radius: 18px;
@@ -580,6 +580,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	main section {
 		margin-top: 3em;
+	}
+	.hero--banner + section {
+		margin-top: 0.8em;
 	}
 	.section-flair {
 		position: relative;
