@@ -12,10 +12,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-						<img src="https://i.postimg.cc/CLLdWd5W/Gemini-Generated-Image-s6035cs6035cs603.png" alt="" loading="lazy" decoding="async" />
-
 		<main id="home">
 			<section class="hero-strip" aria-hidden="true">
+				<img src="https://i.postimg.cc/CLLdWd5W/Gemini-Generated-Image-s6035cs6035cs603.png" alt="" loading="lazy" decoding="async" />
 			</section>
 			<section class="hero hero--banner section-flair section-flair--warm section-band section-band--amber">
 				<div class="hero__content">
@@ -206,11 +205,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.hero-strip {
 		position: relative;
 		margin: 0 calc(50% - 50vw);
+		overflow: hidden;
+		border-radius: 18px;
+		box-shadow: 0 18px 34px rgba(var(--black), 0.18);
 	}
 	.hero-strip img {
-		width: 100%;
-		height: auto;
+		width: 100vw;
+		max-width: 100%;
+		height: 360px;
 		display: block;
+		object-fit: cover;
+		object-position: center;
 	}
 	.hero-strip::after {
 		content: "";
@@ -612,6 +617,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 		.hero-strip {
 			margin: 0 calc(50% - 50vw);
+			border-radius: 14px;
+			height: 240px;
 		}
 		.hero--banner {
 			padding: 1.6em 1.2em;
