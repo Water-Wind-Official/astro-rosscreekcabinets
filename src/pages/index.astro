@@ -202,6 +202,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		gap: 2em;
 		align-items: center;
 	}
+	:root {
+		--hero-lift: -140px;
+	}
 	.hero-strip {
 		position: relative;
 		margin: 0 calc(50% - 50vw);
@@ -229,7 +232,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	.hero--banner {
 		position: relative;
-		margin-top: -90px;
+		margin-top: var(--hero-lift);
 		padding: 2.4em 2.2em;
 		overflow: hidden;
 		border-radius: 18px;
@@ -616,6 +619,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.hero,
 		.cta {
 			grid-template-columns: 1fr;
+		}
+		:root {
+			--hero-lift: -70px;
 		}
 		.hero-strip {
 			margin: 0 calc(50% - 50vw);
