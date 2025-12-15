@@ -89,7 +89,7 @@ import { SITE_TITLE } from '../consts';
 		max-width: 52ch;
 	}
 	.info {
-		background: #fff;
+		background: rgba(var(--surface-rgb), 0.92);
 		border: 1px solid rgba(var(--gray), 0.12);
 		border-radius: 14px;
 		padding: 1.2em;
@@ -110,11 +110,7 @@ import { SITE_TITLE } from '../consts';
 		gap: 1em;
 	}
 	.card {
-		background: #fff;
 		padding: 1.2em;
-		border-radius: 14px;
-		border: 1px solid rgba(var(--gray), 0.12);
-		box-shadow: 0 10px 22px rgba(var(--gray), 0.08);
 	}
 	.cta {
 		display: grid;
@@ -134,26 +130,19 @@ import { SITE_TITLE } from '../consts';
 		display: grid;
 		gap: 0.6em;
 	}
-	.btn {
-		display: inline-block;
-		padding: 0.75em 1.1em;
-		border-radius: 999px;
-		font-weight: 700;
-		text-decoration: none;
-		border: 2px solid var(--accent);
-	}
-	.btn.primary {
+	.cta .btn.primary {
 		background: #fff;
 		color: var(--accent);
-	}
-	.btn.ghost {
-		background: transparent;
-		color: #fff;
 		border-color: #fff;
 	}
-	.btn.primary:hover,
-	.btn.ghost:hover {
-		opacity: 0.9;
+	.cta .btn.ghost {
+		background: transparent;
+		color: #fff;
+		border-color: rgba(255, 255, 255, 0.85);
+	}
+	.cta .btn.primary:hover,
+	.cta .btn.ghost:hover {
+		opacity: 0.92;
 	}
 	@media (max-width: 960px) {
 		.about-hero,

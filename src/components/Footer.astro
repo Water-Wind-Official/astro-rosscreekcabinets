@@ -32,8 +32,12 @@ const today = new Date();
 <style>
 	footer {
 		padding: 3em 1.5em 4em 1.5em;
-		background: #1f2733;
-		color: #eef1f6;
+		background:
+			linear-gradient(180deg, rgba(var(--black), 0.92), rgba(var(--black), 0.98)),
+			radial-gradient(900px 520px at 20% 0%, rgba(75, 138, 160, 0.22), rgba(75, 138, 160, 0)),
+			radial-gradient(900px 520px at 80% 0%, rgba(154, 79, 31, 0.18), rgba(154, 79, 31, 0));
+		color: rgba(255, 255, 255, 0.92);
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
 	}
 	.footer__top {
 		display: grid;
@@ -45,17 +49,20 @@ const today = new Date();
 	footer h3,
 	footer h4 {
 		margin: 0 0 0.35em 0;
-		color: #eef1f6;
+		color: rgba(255, 255, 255, 0.96);
 	}
 	footer p {
 		margin: 0;
-		color: rgba(238, 241, 246, 0.85);
+		color: rgba(255, 255, 255, 0.78);
 	}
 	footer a {
-		color: #eef1f6;
+		color: rgba(255, 255, 255, 0.92);
 		text-decoration: none;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.16em;
 	}
 	footer a:hover {
+		color: rgba(191, 227, 238, 0.95);
 		text-decoration: underline;
 	}
 	.footer__bottom {
@@ -64,7 +71,7 @@ const today = new Date();
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 		padding-top: 1em;
 		text-align: center;
-		color: rgba(247, 247, 247, 0.75);
+		color: rgba(255, 255, 255, 0.7);
 	}
 	.quick-links {
 		display: flex;

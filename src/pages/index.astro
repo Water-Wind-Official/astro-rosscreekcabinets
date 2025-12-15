@@ -243,7 +243,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		z-index: 2;
 	}
 	.hero__content {
-		background: #fdfbf7;
+		background: rgba(var(--surface-rgb), 0.92);
 		padding: 1.6em;
 		border-radius: 18px;
 		border: 1px solid rgba(var(--gray), 0.12);
@@ -356,11 +356,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.card {
 		display: flex;
 		flex-direction: column;
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 241, 234, 0.94));
 		padding: 1.8em 1.6em;
-		border-radius: 16px;
-		border: 2px solid rgba(var(--gray), 0.12);
-		box-shadow: 0 14px 28px rgba(var(--gray), 0.14);
 		opacity: 0;
 		transform: translateY(18px);
 		animation: riseFade 0.75s ease forwards;
@@ -539,7 +535,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 	}
 	.panel {
-		background: #fbf6ef;
+		background: rgba(var(--surface-rgb), 0.88);
 		border: 1px solid rgba(var(--accent), 0.12);
 		border-radius: 18px;
 		padding: 2.3em;
@@ -576,30 +572,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		margin: 0;
 		color: rgba(255, 255, 255, 0.85);
 	}
-	.btn {
-		display: inline-block;
-		padding: 0.75em 1.1em;
-		border-radius: 999px;
-		font-weight: 700;
-		text-decoration: none;
-		border: 2px solid var(--accent);
-	}
-	.btn.primary {
-		background: var(--accent);
-		color: #fff;
-	}
-	.btn.primary:hover {
-		background: var(--accent-dark);
-		border-color: var(--accent-dark);
-		color: #fff;
-	}
-	.btn.ghost {
-		background: var(--surface);
-		color: var(--accent);
-	}
-	.btn.ghost:hover {
-		background: #fff5eb;
-	}
 	.copy-row {
 		display: flex;
 		gap: 0.4em;
@@ -607,7 +579,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	.copy-btn {
 		border: 1px solid rgba(var(--gray), 0.25);
-		background: #fff;
+		background: rgba(var(--surface-rgb), 0.92);
 		color: rgb(var(--gray-dark));
 		border-radius: 10px;
 		padding: 0.4em 0.7em;
