@@ -23,15 +23,15 @@ import { SITE_TITLE } from '../consts';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1.25em;
-		background: rgba(var(--black), 0.92);
-		backdrop-filter: blur(14px);
-		-webkit-backdrop-filter: blur(14px);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-		box-shadow: 0 18px 44px rgba(var(--black), 0.28);
+		padding: 0 2em;
+		background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+		backdrop-filter: blur(20px) saturate(1.2);
+		-webkit-backdrop-filter: blur(20px) saturate(1.2);
+		border-bottom: 2px solid #D4AF37;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
 		position: sticky;
 		top: 0;
-		z-index: 10;
+		z-index: 100;
 	}
 	nav {
 		display: grid;
@@ -44,18 +44,28 @@ import { SITE_TITLE } from '../consts';
 	}
 	.brand h2 {
 		margin: 0;
-		font-size: 1.1em;
+		font-size: 1.4em;
+		font-weight: 900;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
 	}
 	.brand p {
-		margin: 0.1em 0 0 0;
-		font-size: 0.9em;
-		color: rgba(255, 255, 255, 0.72);
+		margin: 0.2em 0 0 0;
+		font-size: 0.85em;
+		color: #D4AF37;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
 	}
 	.brand a {
 		text-decoration: none;
-		color: rgba(255, 255, 255, 0.96);
+		color: #FFFFFF;
 		padding: 0;
-		border-radius: 10px;
+		border-radius: 0;
+		transition: color 0.3s ease;
+	}
+	.brand a:hover {
+		color: #D4AF37;
 	}
 	.internal-links {
 		display: flex;
@@ -65,40 +75,81 @@ import { SITE_TITLE } from '../consts';
 		justify-content: flex-end;
 	}
 	.internal-links a {
-		padding: 0.9em 0.6em;
-		color: rgba(255, 255, 255, 0.92);
+		padding: 1.2em 1em;
+		color: rgba(255, 255, 255, 0.95);
 		font-family: var(--font-display);
-		font-size: 0.92em;
+		font-size: 0.95em;
+		font-weight: 700;
 		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 		border-bottom: 3px solid transparent;
-		border-radius: var(--radius-md);
-		transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+		border-radius: 0;
+		transition: all 0.3s ease;
+		position: relative;
+	}
+	.internal-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 2px;
+		background: #D4AF37;
+		transform: translateX(-50%);
+		transition: width 0.3s ease;
 	}
 	.internal-links a:hover {
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(212, 175, 55, 0.1);
+		color: #D4AF37;
+	}
+	.internal-links a:hover::after {
+		width: 80%;
 	}
 	.internal-links a.active {
-		border-bottom-color: var(--accent);
-		background: rgba(var(--ring), 0.18);
-		font-weight: 700;
+		border-bottom-color: #D4AF37;
+		background: rgba(212, 175, 55, 0.15);
+		font-weight: 900;
 		text-decoration: none;
+		color: #D4AF37;
+	}
+	.internal-links a.active::after {
+		width: 80%;
 	}
 	.cta {
-		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-		color: rgb(var(--black));
-		border-radius: var(--radius-md);
-		padding: 0.65em 1.1em;
-		font-weight: 700;
+		background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+		color: #000000;
+		border-radius: 0;
+		padding: 0.8em 1.5em;
+		font-weight: 900;
 		font-family: var(--font-display);
-		box-shadow: 0 18px 44px rgba(var(--black), 0.32);
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+		font-size: 0.9em;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.2);
+		border: 2px solid #D4AF37;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+	.cta::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+		transition: left 0.5s ease;
 	}
 	.cta:hover {
-		filter: brightness(1.03);
-		transform: translateY(-1px);
-		box-shadow: 0 22px 56px rgba(var(--black), 0.38);
-		color: rgb(var(--black));
+		background: linear-gradient(135deg, #E6C357 0%, #D4AF37 100%);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.3);
+		color: #000000;
+	}
+	.cta:hover::before {
+		left: 100%;
 	}
 	@media (max-width: 960px) {
 		nav {
