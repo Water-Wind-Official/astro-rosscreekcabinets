@@ -776,7 +776,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 	.cta {
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 		align-items: center;
 		gap: 2em;
 		background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
@@ -787,6 +787,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border: 2px solid rgba(212, 175, 55, 0.3);
 		position: relative;
 		overflow: hidden;
+	}
+	.cta > * {
+		min-width: 0;
 	}
 	.cta::before {
 		content: '';
@@ -808,16 +811,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.cta__actions {
 		display: grid;
 		gap: 1em;
+		min-width: 0;
 	}
 	.cta__actions .btn {
 		width: 100%;
 		text-align: center;
+		display: block;
 		padding: 1em 1.5em;
 		font-weight: 800;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		border-radius: 0;
 		transition: all 0.3s ease;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+		white-space: normal;
 	}
 	.cta__address {
 		margin: 0;
@@ -826,6 +834,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		font-size: 0.9em;
+		overflow-wrap: anywhere;
+		word-break: break-word;
 	}
 	.copy-row {
 		display: flex;
