@@ -8,6 +8,7 @@
 	--accent: #D4AF37;
 	--accent-dark: #B8941F;
 	--sticky-header-offset: 90px;
+	--safe-area-top: env(safe-area-inset-top, 0px);
 	--black: 0, 0, 0;
 	--gray: 176, 186, 196;
 	--gray-light: 26, 26, 26;
@@ -71,7 +72,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	scroll-padding-top: var(--sticky-header-offset);
+	scroll-padding-top: calc(var(--sticky-header-offset) + var(--safe-area-top));
 	background:
 		linear-gradient(180deg, #000000 0%, #1a1a1a 100%),
 		radial-gradient(900px 520px at 20% 0%, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0)),
@@ -89,7 +90,7 @@ body {
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
-	scroll-padding-top: var(--sticky-header-offset);
+	scroll-padding-top: calc(var(--sticky-header-offset) + var(--safe-area-top));
 }
 
 main {
@@ -104,7 +105,7 @@ main section {
 }
 
 section[id] {
-	scroll-margin-top: calc(var(--sticky-header-offset) + 12px);
+	scroll-margin-top: calc(var(--sticky-header-offset) + var(--safe-area-top) + 12px);
 }
 
 section.section-creek {
@@ -318,6 +319,10 @@ hr {
 	}
 	body {
 		font-size: 18px;
+	}
+	#contact {
+		padding-top: calc(var(--sticky-header-offset) + var(--safe-area-top) + 24px);
+		margin-top: calc(-1 * (var(--sticky-header-offset) + var(--safe-area-top) + 24px));
 	}
 	main {
 		padding: 1em;
