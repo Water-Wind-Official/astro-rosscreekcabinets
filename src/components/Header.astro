@@ -172,6 +172,7 @@ import { SITE_TITLE } from '../consts';
 <script type="module">
 	if (typeof window !== "undefined") {
 		const navLinks = Array.from(document.querySelectorAll("header .internal-links a"));
+		const homeLink = navLinks.find((link) => (link.getAttribute("href") || "") === "/");
 
 		const linkSections = navLinks
 			.map((link) => {
@@ -191,6 +192,13 @@ import { SITE_TITLE } from '../consts';
 
 		const highlightNearest = () => {
 			const viewportMiddle = window.scrollY + window.innerHeight / 2;
+			if (homeLink && linkSections[0]) {
+				const firstSectionTop = linkSections[0].section.offsetTop;
+				if (viewportMiddle < firstSectionTop) {
+					setActive(homeLink);
+					return;
+				}
+			}
 			let closest;
 			let closestDelta = Number.POSITIVE_INFINITY;
 			linkSections.forEach((item) => {
@@ -239,7 +247,7 @@ import { SITE_TITLE } from '../consts';
 			linkSections.forEach(({ section }) => observer.observe(section));
 
 			// Ensure a default highlight on load
-			if (linkSections[0]) setActive(linkSections[0].link);
+			highlightNearest();
 
 			// Keep a nearest highlight as you scroll/resize
 			window.addEventListener("scroll", onScroll, { passive: true });

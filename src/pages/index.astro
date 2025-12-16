@@ -920,6 +920,76 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			padding: 1em;
 		}
 	}
+	@media (max-width: 640px) {
+		:root {
+			--hero-lift: -72px;
+		}
+		.hero-strip {
+			height: 220px;
+		}
+		.hero-strip img {
+			height: 100%;
+		}
+		.hero--banner {
+			padding: 1.2em 1em;
+		}
+		.hero__content {
+			padding: 1.4em 1.15em;
+		}
+		.hero__content h1 {
+			font-size: clamp(2.1rem, 10vw, 3.1rem);
+		}
+		.hero__actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.hero__actions .btn {
+			min-width: 0;
+			width: 100%;
+		}
+		.hero__card {
+			padding: 1.35em 1.15em;
+		}
+		main section {
+			margin-top: 2.5em;
+		}
+		.hero--banner + section {
+			margin-top: 1em;
+		}
+		.section-header {
+			margin-bottom: 1.8em;
+		}
+		.section-header h2 {
+			font-size: clamp(1.7rem, 7.2vw, 2.1rem);
+		}
+		.section-header p {
+			font-size: 1em;
+		}
+		.card {
+			padding: 1.4em 1.2em;
+		}
+		.step {
+			padding: 1.25em 1.1em;
+			gap: 1em;
+		}
+		.step__number {
+			width: 42px;
+			height: 42px;
+		}
+		.panel {
+			padding: 1.6em 1.2em;
+		}
+		.cta {
+			padding: 1.6em 1.2em;
+			gap: 1.2em;
+		}
+		.cta h2 {
+			font-size: 1.55em;
+		}
+		.cta__actions .btn {
+			padding: 0.9em 1.1em;
+		}
+	}
 </style>
 <script type="module">
 	if (typeof window !== "undefined") {
