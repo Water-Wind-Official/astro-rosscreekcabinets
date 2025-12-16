@@ -33,11 +33,21 @@ const today = new Date();
 	footer {
 		padding: 3em 1.5em 4em 1.5em;
 		background:
-			linear-gradient(180deg, rgba(var(--black), 0.94), rgba(var(--black), 0.99)),
-			radial-gradient(900px 520px at 20% 0%, rgba(var(--ring), 0.22), rgba(var(--ring), 0)),
-			radial-gradient(900px 520px at 80% 0%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+			linear-gradient(180deg, #000000, #1a1a1a),
+			radial-gradient(900px 520px at 20% 0%, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0)),
+			radial-gradient(900px 520px at 80% 0%, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
 		color: rgba(255, 255, 255, 0.92);
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-top: 2px solid rgba(212, 175, 55, 0.3);
+		position: relative;
+	}
+	footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, #D4AF37, #E6C357, #D4AF37);
 	}
 	.footer__top {
 		display: grid;
@@ -49,7 +59,10 @@ const today = new Date();
 	footer h3,
 	footer h4 {
 		margin: 0 0 0.35em 0;
-		color: rgba(255, 255, 255, 0.96);
+		color: #D4AF37;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 	footer p {
 		margin: 0;
@@ -60,15 +73,16 @@ const today = new Date();
 		text-decoration: none;
 		text-decoration-thickness: 2px;
 		text-underline-offset: 0.16em;
+		transition: color 0.3s ease;
 	}
 	footer a:hover {
-		color: var(--accent);
+		color: #D4AF37;
 		text-decoration: underline;
 	}
 	.footer__bottom {
 		max-width: 1200px;
 		margin: 0 auto;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-top: 1px solid rgba(212, 175, 55, 0.2);
 		padding-top: 1em;
 		text-align: center;
 		color: rgba(255, 255, 255, 0.7);
@@ -79,5 +93,16 @@ const today = new Date();
 		justify-content: center;
 		margin-bottom: 0.5em;
 		flex-wrap: wrap;
+	}
+	.quick-links a {
+		color: rgba(212, 175, 55, 0.8);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: 0.9em;
+		transition: color 0.3s ease;
+	}
+	.quick-links a:hover {
+		color: #D4AF37;
 	}
 </style>
