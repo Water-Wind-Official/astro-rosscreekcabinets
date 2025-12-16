@@ -31,7 +31,12 @@ import { SITE_TITLE } from '../consts';
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
 		position: sticky;
 		top: 0;
-		z-index: 100;
+		z-index: 9999;
+		isolation: isolate;
+		transform: translateZ(0);
+		-webkit-transform: translateZ(0);
+		will-change: transform;
+		pointer-events: auto;
 	}
 	nav {
 		display: grid;
