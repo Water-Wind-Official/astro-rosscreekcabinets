@@ -156,6 +156,12 @@ import { SITE_TITLE } from '../consts';
 			grid-template-columns: 1fr;
 			gap: 0.5em;
 		}
+		header {
+			transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+			will-change: transform;
+			pointer-events: auto;
+		}
 		.brand {
 			text-align: center;
 		}
