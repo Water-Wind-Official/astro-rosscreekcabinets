@@ -71,10 +71,7 @@ body {
 	padding: 0;
 	text-align: left;
 	background:
-		radial-gradient(900px 600px at 12% -10%, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0)),
-		radial-gradient(720px 520px at 86% 0%, rgba(11, 18, 32, 0.04), rgba(11, 18, 32, 0)),
-		repeating-linear-gradient(135deg, rgba(212, 175, 55, 0.02) 0, rgba(212, 175, 55, 0.02) 10px, transparent 10px, transparent 28px),
-		linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+		linear-gradient(180deg, #4C3517 0%, #2B1B0B 100%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
