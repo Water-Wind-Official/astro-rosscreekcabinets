@@ -210,11 +210,25 @@ import { SITE_TITLE } from '../consts';
 </style>
 <script type="module">
 	if (typeof window !== "undefined") {
-		const interceptSamePageHashLinks = (handler) => {
-			const isMobile = window.matchMedia("(max-width: 960px)").matches;
-			const links = Array.from(document.querySelectorAll('a[href*="#"]'));
-			links.forEach((link) => {
-				if (isMobile && link.classList.contains("cta")) return;
+		const updateHeaderOffset = () => {
+			const header = document.querySelector("header");
+			if (!header) return;
+			const height = Math.ceil(header.getBoundingClientRect().height);
+			document.documentElement.style.setProperty("--sticky-header-offset", `${height}px`);
+		};
+
+		updateHeaderOffset();
+		window.addEventListener("load", updateHeaderOffset);
+		window.addEventListener("resize", updateHeaderOffset);
+		window.setTimeout(updateHeaderOffset, 250);
+		if (document.fonts && typeof document.fonts.ready?.then === "function") {
+			document.fonts.ready.then(updateHeaderOffset);
+		}
+
+		const isMobile = window.matchMedia("(max-width: 960px)").matches;
+		if (!isMobile) {
+			const headerLinks = Array.from(document.querySelectorAll('header a[href*="#"]'));
+			headerLinks.forEach((link) => {
 				const href = link.getAttribute("href") || "";
 				if (!href) return;
 				if (href.startsWith("mailto:") || href.startsWith("tel:")) return;
@@ -229,44 +243,12 @@ import { SITE_TITLE } from '../consts';
 				link.addEventListener("click", (e) => {
 					e.preventDefault();
 					history.pushState(null, "", url.hash);
-					handler();
+					const id = decodeURIComponent(url.hash.slice(1));
+					const target = document.getElementById(id);
+					if (!target) return;
+					target.scrollIntoView({ block: "start", behavior: "smooth" });
 				});
 			});
-		};
-
-		const scrollToHashTarget = () => {
-			const hash = window.location.hash;
-			if (!hash || hash.length < 2) return;
-			const id = decodeURIComponent(hash.slice(1));
-			const target = document.getElementById(id);
-			if (!target) return;
-			const header = document.querySelector("header");
-			const offset = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
-			const rawSafe = getComputedStyle(document.documentElement)
-				.getPropertyValue("--safe-area-top")
-				.trim();
-			const safe = Number.parseInt(rawSafe || "0", 10) || 0;
-			const extra = 24;
-			target.scrollIntoView({ block: "start", behavior: "auto" });
-			window.scrollBy({ top: -(offset + safe + extra), left: 0, behavior: "auto" });
-		};
-
-		const updateHeaderOffset = () => {
-			const header = document.querySelector("header");
-			if (!header) return;
-			const height = Math.ceil(header.getBoundingClientRect().height);
-			document.documentElement.style.setProperty("--sticky-header-offset", `${height}px`);
-			window.requestAnimationFrame(scrollToHashTarget);
-			window.setTimeout(scrollToHashTarget, 50);
-		};
-
-		updateHeaderOffset();
-		window.addEventListener("load", updateHeaderOffset);
-		window.addEventListener("resize", updateHeaderOffset);
-		window.addEventListener("hashchange", updateHeaderOffset);
-		window.setTimeout(updateHeaderOffset, 250);
-		if (document.fonts && typeof document.fonts.ready?.then === "function") {
-			document.fonts.ready.then(updateHeaderOffset);
 		}
 	}
 </script>
