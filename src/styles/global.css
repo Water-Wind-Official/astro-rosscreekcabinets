@@ -5,31 +5,33 @@
  */
 
 :root {
-	--accent: #9a4f1f;
-	--accent-dark: #6f3614;
-	--black: 17, 24, 39;
+	--accent: #d6a23a;
+	--accent-dark: #a06e10;
+	--black: 11, 18, 32;
 	--gray: 100, 116, 139;
-	--gray-light: 226, 232, 240;
-	--gray-dark: 30, 41, 59;
-	--surface: #f7f3ec;
-	--surface-strong: #efe8dd;
-	--gray-gradient: #e9e2d7, #f7f3ec;
+	--gray-light: 241, 245, 249;
+	--gray-dark: 33, 41, 54;
+	--surface: #ffffff;
+	--surface-strong: #f3f4f6;
+	--gray-gradient: #f8fafc, #ffffff;
 	--creek-ink: #4b8aa0;
 	--creek-foam: #bfe3ee;
 	--creek-deep: #2f5f73;
-	--surface-rgb: 247, 243, 236;
-	--surface-strong-rgb: 239, 232, 221;
-	--ring: 75, 138, 160;
-	--border: 148, 163, 184;
-	--shadow-sm: 0 8px 18px rgba(var(--black), 0.08);
-	--shadow-md: 0 16px 32px rgba(var(--black), 0.12);
-	--shadow-lg: 0 24px 60px rgba(var(--black), 0.16);
+	--surface-rgb: 255, 255, 255;
+	--surface-strong-rgb: 243, 244, 246;
+	--ring: 214, 162, 58;
+	--border: 203, 213, 225;
+	--shadow-sm: 0 10px 24px rgba(var(--black), 0.08);
+	--shadow-md: 0 18px 38px rgba(var(--black), 0.14);
+	--shadow-lg: 0 34px 80px rgba(var(--black), 0.18);
 	--box-shadow:
-		0 2px 6px rgba(var(--gray), 16%), 0 10px 24px rgba(var(--gray), 22%),
-		0 18px 44px rgba(var(--black), 10%);
-	--radius-sm: 10px;
-	--radius-md: 14px;
-	--radius-lg: 18px;
+		0 2px 8px rgba(var(--black), 0.08),
+		0 18px 48px rgba(var(--black), 0.14);
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--font-body: "Atkinson", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-display: "Montserrat", "Atkinson", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 *,
@@ -64,14 +66,15 @@
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: var(--font-body);
 	margin: 0;
 	padding: 0;
 	text-align: left;
 	background:
-		radial-gradient(1200px 800px at 10% 0%, rgba(75, 138, 160, 0.16), rgba(75, 138, 160, 0)),
-		radial-gradient(900px 700px at 90% 0%, rgba(154, 79, 31, 0.16), rgba(154, 79, 31, 0)),
-		linear-gradient(180deg, #fbf8f2 0%, #f6f1e8 45%, #f0e9dd 100%);
+		radial-gradient(900px 600px at 12% -10%, rgba(214, 162, 58, 0.22), rgba(214, 162, 58, 0)),
+		radial-gradient(720px 520px at 86% 0%, rgba(11, 18, 32, 0.06), rgba(11, 18, 32, 0)),
+		repeating-linear-gradient(135deg, rgba(11, 18, 32, 0.03) 0, rgba(11, 18, 32, 0.03) 10px, transparent 10px, transparent 28px),
+		linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
@@ -126,22 +129,29 @@ h5,
 h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
-	line-height: 1.2;
+	line-height: 1.1;
+	font-family: var(--font-display);
+	letter-spacing: -0.02em;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(2.35rem, 5.2vw, 3.65rem);
+	font-weight: 800;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: clamp(1.8rem, 3.8vw, 2.75rem);
+	font-weight: 800;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+	font-weight: 750;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.18rem;
+	font-weight: 720;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.05rem;
+	font-weight: 720;
 }
 strong,
 b {
@@ -210,42 +220,47 @@ input {
 	align-items: center;
 	justify-content: center;
 	gap: 0.5em;
-	padding: 0.75em 1.1em;
-	border-radius: 999px;
+	padding: 0.85em 1.25em;
+	border-radius: var(--radius-md);
 	font-weight: 700;
+	font-family: var(--font-display);
 	text-decoration: none;
-	border: 2px solid var(--accent);
+	border: 1px solid rgba(var(--black), 0.18);
+	box-shadow: 0 12px 26px rgba(var(--black), 0.12);
 	transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .btn:hover {
 	transform: translateY(-1px);
-	box-shadow: var(--shadow-sm);
+	box-shadow: var(--shadow-md);
 }
 
 .btn.primary {
-	background: var(--accent);
+	background: rgb(var(--black));
+	border-color: rgb(var(--black));
 	color: #fff;
 }
 
 .btn.primary:hover {
-	background: var(--accent-dark);
-	border-color: var(--accent-dark);
-	color: #fff;
+	background: var(--accent);
+	border-color: var(--accent);
+	color: rgb(var(--black));
 }
 
 .btn.ghost {
-	background: rgba(var(--surface-rgb), 0.85);
-	color: var(--accent);
+	background: transparent;
+	border-color: rgba(var(--black), 0.3);
+	color: rgb(var(--black));
 }
 
 .btn.ghost:hover {
-	background: rgba(255, 255, 255, 0.92);
+	background: rgba(var(--black), 0.04);
+	border-color: rgba(var(--black), 0.4);
 }
 
 .card {
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 241, 234, 0.94));
-	border: 1px solid rgba(var(--border), 0.55);
+	background: rgba(var(--surface-rgb), 0.96);
+	border: 1px solid rgba(var(--black), 0.12);
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-sm);
 }

@@ -33,9 +33,9 @@ const today = new Date();
 	footer {
 		padding: 3em 1.5em 4em 1.5em;
 		background:
-			linear-gradient(180deg, rgba(var(--black), 0.92), rgba(var(--black), 0.98)),
-			radial-gradient(900px 520px at 20% 0%, rgba(75, 138, 160, 0.22), rgba(75, 138, 160, 0)),
-			radial-gradient(900px 520px at 80% 0%, rgba(154, 79, 31, 0.18), rgba(154, 79, 31, 0));
+			linear-gradient(180deg, rgba(var(--black), 0.94), rgba(var(--black), 0.99)),
+			radial-gradient(900px 520px at 20% 0%, rgba(var(--ring), 0.22), rgba(var(--ring), 0)),
+			radial-gradient(900px 520px at 80% 0%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
 		color: rgba(255, 255, 255, 0.92);
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 	}
@@ -62,7 +62,7 @@ const today = new Date();
 		text-underline-offset: 0.16em;
 	}
 	footer a:hover {
-		color: rgba(191, 227, 238, 0.95);
+		color: var(--accent);
 		text-decoration: underline;
 	}
 	.footer__bottom {
