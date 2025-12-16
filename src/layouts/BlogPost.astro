@@ -23,7 +23,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				display: block;
 				margin: 0 auto;
 				border-radius: var(--radius-lg);
-				box-shadow: var(--shadow-lg);
+				border: 1px solid rgba(var(--border), 0.25);
+				box-shadow: 0 34px 80px rgba(var(--black), 0.55), 0 0 0 1px rgba(var(--border), 0.18);
 			}
 			.prose {
 				width: 720px;
@@ -31,12 +32,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin: auto;
 				padding: 1.35em 1.35em 1.1em 1.35em;
 				color: rgb(var(--gray-dark));
-				background: rgba(var(--surface-rgb), 0.72);
-				border: 1px solid rgba(var(--border), 0.5);
+				background: linear-gradient(135deg, rgba(var(--surface-rgb), 0.96), rgba(var(--surface-strong-rgb), 0.98));
+				border: 1px solid rgba(var(--border), 0.28);
+				border-top: 4px solid var(--accent);
 				border-radius: var(--radius-lg);
-				box-shadow: var(--shadow-sm);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
+				box-shadow: var(--shadow-md);
 			}
 			.title {
 				margin-bottom: 1em;
