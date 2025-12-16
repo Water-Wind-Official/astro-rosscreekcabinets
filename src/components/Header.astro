@@ -171,6 +171,19 @@ import { SITE_TITLE } from '../consts';
 </style>
 <script type="module">
 	if (typeof window !== "undefined") {
+		const updateHeaderOffset = () => {
+			const header = document.querySelector("header");
+			if (!header) return;
+			const height = Math.ceil(header.getBoundingClientRect().height);
+			document.documentElement.style.setProperty("--sticky-header-offset", `${height}px`);
+		};
+
+		updateHeaderOffset();
+		window.addEventListener("resize", updateHeaderOffset);
+	}
+</script>
+<script type="module">
+	if (typeof window !== "undefined") {
 		const navLinks = Array.from(document.querySelectorAll("header .internal-links a"));
 		const homeLink = navLinks.find((link) => (link.getAttribute("href") || "") === "/");
 

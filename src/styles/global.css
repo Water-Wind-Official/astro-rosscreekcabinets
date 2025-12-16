@@ -7,6 +7,7 @@
 :root {
 	--accent: #D4AF37;
 	--accent-dark: #B8941F;
+	--sticky-header-offset: 90px;
 	--black: 0, 0, 0;
 	--gray: 176, 186, 196;
 	--gray-light: 26, 26, 26;
@@ -70,6 +71,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
+	scroll-padding-top: var(--sticky-header-offset);
 	background:
 		linear-gradient(180deg, #000000 0%, #1a1a1a 100%),
 		radial-gradient(900px 520px at 20% 0%, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0)),
@@ -87,7 +89,7 @@ body {
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
-	scroll-padding-top: 90px;
+	scroll-padding-top: var(--sticky-header-offset);
 }
 
 main {
@@ -100,6 +102,11 @@ main {
 main section {
 	margin-top: 3em;
 }
+
+section[id] {
+	scroll-margin-top: calc(var(--sticky-header-offset) + 12px);
+}
+
 section.section-creek {
 	position: relative;
 	overflow: hidden;
@@ -306,11 +313,11 @@ hr {
 	margin: 1.4em 0 1.2em -10%;
 }
 @media (max-width: 720px) {
+	:root {
+		--sticky-header-offset: 170px;
+	}
 	body {
 		font-size: 18px;
-	}
-	html {
-		scroll-padding-top: 170px;
 	}
 	main {
 		padding: 1em;
