@@ -87,6 +87,7 @@ body {
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	scroll-padding-top: 90px;
 }
 
 main {
@@ -307,6 +308,9 @@ hr {
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
+	}
+	html {
+		scroll-padding-top: 170px;
 	}
 	main {
 		padding: 1em;
