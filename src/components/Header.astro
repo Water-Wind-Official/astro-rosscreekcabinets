@@ -256,7 +256,6 @@ import { SITE_TITLE } from '../consts';
 		};
 
 		updateHeaderOffset();
-		interceptSamePageHashLinks(updateHeaderOffset);
 		window.addEventListener("load", updateHeaderOffset);
 		window.addEventListener("resize", updateHeaderOffset);
 		window.addEventListener("hashchange", updateHeaderOffset);
@@ -270,61 +269,61 @@ import { SITE_TITLE } from '../consts';
 <script type="module">
 	if (typeof window !== "undefined") {
 		const isMobile = window.matchMedia("(max-width: 960px)").matches;
-		if (!isMobile) return;
-
-		const cta = document.querySelector("header a.cta");
-		if (!cta) return;
-
-		const fallbackCopy = (text) => {
-			const area = document.createElement("textarea");
-			area.value = text;
-			document.body.appendChild(area);
-			area.select();
-			document.execCommand("copy");
-			document.body.removeChild(area);
-		};
-		const copyText = async (text) => {
-			if (navigator.clipboard?.writeText) {
-				try {
-					await navigator.clipboard.writeText(text);
-					return true;
-				} catch (err) {
+		if (isMobile) {
+			const cta = document.querySelector("header a.cta");
+			if (cta) {
+				const fallbackCopy = (text) => {
+					const area = document.createElement("textarea");
+					area.value = text;
+					document.body.appendChild(area);
+					area.select();
+					document.execCommand("copy");
+					document.body.removeChild(area);
+				};
+				const copyText = async (text) => {
+					if (navigator.clipboard?.writeText) {
+						try {
+							await navigator.clipboard.writeText(text);
+							return true;
+						} catch (err) {
+							fallbackCopy(text);
+							return false;
+						}
+					}
 					fallbackCopy(text);
 					return false;
-				}
-			}
-			fallbackCopy(text);
-			return false;
-		};
+				};
 
-		const bindCopyButtons = (root) => {
-			const buttons = Array.from(root.querySelectorAll("[data-copy]"));
-			buttons.forEach((btn) => {
-				const defaultLabel = btn.textContent;
-				btn.addEventListener("click", async () => {
-					const text = btn.getAttribute("data-copy") || "";
-					await copyText(text);
-					btn.textContent = "Copied!";
-					setTimeout(() => {
-						btn.textContent = defaultLabel;
-					}, 1200);
+				const bindCopyButtons = (root) => {
+					const buttons = Array.from(root.querySelectorAll("[data-copy]"));
+					buttons.forEach((btn) => {
+						const defaultLabel = btn.textContent;
+						btn.addEventListener("click", async () => {
+							const text = btn.getAttribute("data-copy") || "";
+							await copyText(text);
+							btn.textContent = "Copied!";
+							setTimeout(() => {
+								btn.textContent = defaultLabel;
+							}, 1200);
+						});
+					});
+				};
+
+				cta.addEventListener("click", (e) => {
+					e.preventDefault();
+					if (document.querySelector("header .cta-copy-row")) return;
+
+					const row = document.createElement("div");
+					row.className = "cta-copy-row";
+					row.innerHTML = `
+						<button class="copy-btn" type="button" data-copy="+19123371152" aria-label="Copy phone number">Copy phone</button>
+						<button class="copy-btn" type="button" data-copy="rosscreekcabinets@gmail.com" aria-label="Copy email address">Copy email</button>
+					`;
+					cta.replaceWith(row);
+					bindCopyButtons(row);
 				});
-			});
-		};
-
-		cta.addEventListener("click", (e) => {
-			e.preventDefault();
-			if (document.querySelector("header .cta-copy-row")) return;
-
-			const row = document.createElement("div");
-			row.className = "cta-copy-row";
-			row.innerHTML = `
-				<button class="copy-btn" type="button" data-copy="+19123371152" aria-label="Copy phone number">Copy phone</button>
-				<button class="copy-btn" type="button" data-copy="rosscreekcabinets@gmail.com" aria-label="Copy email address">Copy email</button>
-			`;
-			cta.replaceWith(row);
-			bindCopyButtons(row);
-		});
+			}
+		}
 	}
 </script>
 <script type="module">
