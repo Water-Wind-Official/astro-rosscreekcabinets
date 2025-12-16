@@ -71,7 +71,7 @@ body {
 	padding: 0;
 	text-align: left;
 	background:
-		linear-gradient(180deg, #4C3517 0%, #2B1B0B 100%);
+		linear-gradient(180deg, #744C23 0%, #2B1B0B 100%);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
